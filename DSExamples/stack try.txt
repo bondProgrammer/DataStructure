@@ -1,0 +1,213 @@
+#include<iostream>
+#include "string"
+using namespace std;
+int const MAX=10;
+
+//
+//int main()
+//{
+	/*char c;
+	int ch;
+	int top=-1;
+	int data;
+	int a[MAX];
+	do
+	{
+		cout<<"\n MENU ";
+		cout<<"\n 1.Add Data";
+		cout<<"\n 2. Display Data";
+		cout<<"\n 3.Remove data";
+		cout<<"\n 4.Exit";
+		cout<<"\n Enter Your Choice="<<endl;
+		cin>>ch;
+		switch (ch)
+		{
+		case 1:
+			cout<<"enter  the data that you want to add"<<endl;
+			cin>>data;
+			
+			if(top>=MAX-1)
+			{
+				cout<<"stack is full"<<endl;
+				break;
+			}
+			++top;
+			a[top]=data;
+			break;
+		case 2:
+			cout<<"stack element are "<<endl;
+			for(int x=0;x<=top;x++)
+			{
+				cout<<a[x]<<endl;
+			}
+			break;
+		case 3:
+			if(top==-1)
+			{
+				cout<<"stack is empty"<<endl;
+				break;
+			}
+			cout<<"data Removed is="<<a[top]<<endl;
+				--top;
+
+			break;
+		case 4:
+			cout<<"Thank u"<<endl;
+			exit(0);
+			break;
+		
+		}
+
+cout<<"do you want to continue"<<endl;
+cin>>c;
+	}while(c=='y'||c=='Y');
+*/
+
+//
+//	return 0;
+//}
+
+class Stack
+{
+public:
+	int rollno;
+	int stk[MAX];
+	static int top;
+	
+	Stack()
+	{
+		top=-1;
+		rollno=0;
+	}
+	inline int isempty()
+	{
+		return (top==-1)? 1 : 0;
+	}
+	inline int isfull()
+	{
+		return (top>=MAX-1)? 1 : 0;
+	}
+	int push();
+	int pop();
+	
+};
+class student:public Stack
+{
+public:
+	string name[MAX];
+	student()
+	{
+		name[MAX]='/0';
+	}
+	int getdetails();
+	void display();
+
+};
+int Stack::top=0;
+
+int student::getdetails()
+{
+	string dname;
+	cout<<"enter the name of student="<<endl;
+	int x =Stack::top;
+	name[x]=dname;
+	return 0;
+}
+void student::display()
+{
+	int x =Stack::top;
+	cout<<"stack element are "<<endl;
+	cout<<"ROLLNO \t NAME "<<endl;
+	for(int x=0;x<=x;x++)
+	{
+		cout<<stk[x]<<"\t"<<name[x] <<endl;
+
+	}
+
+}
+
+int Stack::push()
+{
+	int data;
+	cout<<"enter  the data that you want to add"<<endl;
+	cin>>data;
+	if(isfull())
+	{
+		cout<<"stack is full"<<endl;
+		return 0;
+	}
+	++top;
+	stk[top]=data;
+	return 1;
+}
+int Stack::pop()
+{
+	if(isempty())
+	{
+		cout<<"stack is empty"<<endl;
+		return 0;
+	}
+	cout<<"data Removed is="<<stk[top]<<endl;
+	--top;
+
+
+	return 1;
+}
+int main()
+{
+	Stack s;
+	student stud[MAX];
+	char c;
+	int ch;
+	int p;
+	do
+	{
+		cout<<"\n MENU ";
+		cout<<"\n 1.Add Data";
+		cout<<"\n 2.Remove data";
+		cout<<"\n 3.Display Data";
+		cout<<"\n 4.Exit";
+		cout<<"\n Enter Your Choice="<<endl;
+		cin>>ch;
+		switch (ch)
+		{
+		case 1:
+			int x;
+			x=Stack::top;
+			p=stud[x].getdetails();
+			p=stud[x].push();
+			if(!p)
+			{
+				cout<<"data Cannot be added"<<endl;
+				break;
+			}
+			break;
+		case 2:
+			
+			int y;
+			y=Stack::top;
+			p=stud[y].pop();
+			if(!p)
+			{
+				cout<<"data Cannot be added"<<endl;
+				break;
+			}
+			break;
+		case 3:
+			//stud[0].display();
+			break;
+		case 4:
+			cout<<"Thank u"<<endl;
+			exit(0);
+			break;
+		
+		}
+
+cout<<"do you want to continue"<<endl;
+cin>>c;
+	}while(c=='y'||c=='Y');
+
+	
+
+}
+

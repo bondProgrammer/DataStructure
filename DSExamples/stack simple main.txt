@@ -1,0 +1,68 @@
+#include<iostream>
+#include "string.h"
+using namespace std;
+int const MAX=10;
+
+//
+//int main()
+//{
+	/*char c;
+	int ch;
+	int top=-1;
+	int data;
+	int a[MAX];
+	do
+	{
+		cout<<"\n MENU ";
+		cout<<"\n 1.Add Data";
+		cout<<"\n 2. Display Data";
+		cout<<"\n 3.Remove data";
+		cout<<"\n 4.Exit";
+		cout<<"\n Enter Your Choice="<<endl;
+		cin>>ch;
+		switch (ch)
+		{
+		case 1:
+			cout<<"enter  the data that you want to add"<<endl;
+			cin>>data;
+			
+			if(top>=MAX-1)
+			{
+				cout<<"stack is full"<<endl;
+				break;
+			}
+			++top;
+			a[top]=data;
+			break;
+		case 2:
+			cout<<"stack element are "<<endl;
+			for(int x=0;x<=top;x++)
+			{
+				cout<<a[x]<<endl;
+			}
+			break;
+		case 3:
+			if(top==-1)
+			{
+				cout<<"stack is empty"<<endl;
+				break;
+			}
+			cout<<"data Removed is="<<a[top]<<endl;
+				--top;
+
+			break;
+		case 4:
+			cout<<"Thank u"<<endl;
+			exit(0);
+			break;
+		
+		}
+
+cout<<"do you want to continue"<<endl;
+cin>>c;
+	}while(c=='y'||c=='Y');
+*/
+
+//
+//	return 0;
+//}

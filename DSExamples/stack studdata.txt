@@ -1,0 +1,123 @@
+#include<iostream>
+#include "string"
+using namespace std;
+int const MAX=10;
+
+class Stack
+{
+public:
+	int rollno[MAX];
+	int stk[MAX];
+	static int top;
+	string name[MAX];
+	Stack()
+	{
+	}
+	inline int isempty()
+	{
+		return (top==-1)? 1 : 0;
+	}
+	inline int isfull()
+	{
+		return (top>=MAX-1)? 1 : 0;
+	}
+	int push();
+	int pop();
+	void display();
+};
+
+int Stack::top=-1;
+
+void Stack::display()
+{
+	cout<<"stack element are ="<<endl;
+	cout<<"ID\t ROLLNO \tNAME"<<endl;
+	for(int x=0;x<=top;x++)
+	{
+		cout<<x<<"\t"<<rollno[x]<<"\t\t"<<name[x]<<endl;
+	}
+
+}
+
+int Stack::push()
+{
+	int data;
+	string n;
+	cout<<"enter  the ROLLNO that you want to add"<<endl;
+	cin>>data;
+	cout<<"Enter Name of the student"<<endl;
+	cin>>n;
+	if(isfull())
+	{
+		cout<<"stack is full"<<endl;
+		return 0;
+	}
+	++top;
+	rollno[top]=data;
+	name[top]=n;
+	return 1;
+}
+int Stack::pop()
+{
+	if(isempty())
+	{
+		cout<<"stack is empty"<<endl;
+		return 0;
+	}
+	cout<<"data Removed is"<<Stack::top<<endl;
+	//cout<<"ID\t ROLLNO \tNAME"<<endl;
+	//cout<<top<<stk[top]<<name[top]<<endl;
+	--top;
+	return 1;
+}
+int main()
+{
+	Stack s;
+	char c;
+	int ch;
+	int p;
+	do
+	{
+		cout<<"\n MENU ";
+		cout<<"\n 1.Add Data";
+		cout<<"\n 2.Remove data";
+		cout<<"\n 3.Display Data";
+		cout<<"\n 4.Exit";
+		cout<<"\n Enter Your Choice="<<endl;
+		cin>>ch;
+		switch (ch)
+		{
+		case 1:
+			p=s.push();
+			if(!p)
+			{
+				cout<<"data Cannot be added"<<endl;
+				break;
+			}
+			break;
+		case 2:
+			p=s.pop();
+			if(!p)
+			{
+				cout<<"data Cannot be added"<<endl;
+				break;
+			}
+			break;
+		case 3:
+			s.display();
+			break;
+		case 4:
+			cout<<"Thank u"<<endl;
+			exit(0);
+			break;
+		
+		}
+
+cout<<"do you want to continue"<<endl;
+cin>>c;
+	}while(c=='y'||c=='Y');
+
+	
+	return 0;
+}
+

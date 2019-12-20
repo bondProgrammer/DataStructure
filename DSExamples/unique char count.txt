@@ -1,0 +1,50 @@
+#include <iostream>
+#include<string.h>
+#include<cstring>
+using namespace std;
+
+
+void seprate(char *str2)
+{
+    cout<<"current string is = "<<str2;
+    int len=strlen(str2);
+    char visited[7];
+   
+    int i,j,count;
+    for(i=0;i<len;i++)
+    {
+        count=0;
+        int flag=0;
+        for(j=0;j<len;j++)
+        {
+            for(int k=0;k<len;k++)
+            {
+                if(str2[i]==visited[k])
+                {
+                    flag=1;
+                }
+               
+            }
+           if(flag ==0) 
+           {
+              if(str2[i]==str2[j])
+               {
+                   count++;
+               }
+           }
+        }
+		if(count>0)
+		{
+			cout<<endl;
+        cout<<str2[i]<<"="<<count<<endl;
+		} 
+		visited[i]=str2[i];
+    }
+}
+
+int main()
+{
+ char *str="pawan";
+ seprate(str);
+ return 0;
+}
